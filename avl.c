@@ -57,7 +57,6 @@ void imprimirDadosAlunos()
 
 struct nodo *inserir(struct nodo **raiz, int chave)
 {
-    return NULL;
 }
 
 int excluir(struct nodo **raiz, int chave)
@@ -69,7 +68,7 @@ struct nodo *buscar(struct nodo *nodo, int chave)
 {
     struct nodo *aux = nodo;
 
-    while (aux != nodo)
+    while (aux != NULL)
     {
         if (aux->chave = chave)
             return aux;
