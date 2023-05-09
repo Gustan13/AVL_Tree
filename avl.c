@@ -4,33 +4,35 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-//substitua por seus dados
-struct aluno* getAluno1(){
-    struct aluno* retorno = malloc(sizeof(struct aluno));
-    if(!retorno)
+// substitua por seus dados
+struct aluno *getAluno1()
+{
+    struct aluno *retorno = malloc(sizeof(struct aluno));
+    if (!retorno)
         exit(1);
-    retorno->nome = malloc(sizeof("Paulo Ricardo Lisboa de Almeida"));//sizeof conta o \0
-	if(!retorno->nome)
-		exit(1);
+    retorno->nome = malloc(sizeof("Paulo Ricardo Lisboa de Almeida")); // sizeof conta o \0
+    if (!retorno->nome)
+        exit(1);
     retorno->nomeDinf = malloc(sizeof("paulo"));
-    if(!retorno->nomeDinf)
+    if (!retorno->nomeDinf)
         exit(1);
-    
-	strcpy(retorno->nome, "Paulo Ricardo Lisboa de Almeida");
+
+    strcpy(retorno->nome, "Paulo Ricardo Lisboa de Almeida");
     strcpy(retorno->nomeDinf, "paulo");
     retorno->grr = 1234;
 
-	return retorno;
+    return retorno;
 }
 
-struct aluno* getAluno2(){
+struct aluno *getAluno2()
+{
     return NULL;
 }
 
-void imprimirDadosAlunos(){
-    struct aluno* aluno = getAluno1();
-    
+void imprimirDadosAlunos()
+{
+    struct aluno *aluno = getAluno1();
+
     printf("Trabalho de %s\n", aluno->nome);
     printf("Login Dinf %s\n", aluno->nomeDinf);
     printf("GRR %u\n\n", aluno->grr);
@@ -40,9 +42,9 @@ void imprimirDadosAlunos(){
     free(aluno);
 
     aluno = getAluno2();
-    if(!aluno)
+    if (!aluno)
         return;
-    
+
     printf("...E... \n\n");
     printf("Trabalho de %s\n", aluno->nome);
     printf("Login Dinf %s\n", aluno->nomeDinf);
@@ -53,22 +55,39 @@ void imprimirDadosAlunos(){
     free(aluno);
 }
 
-struct nodo* inserir(struct nodo** raiz, int chave){
-	return NULL;
+struct nodo *inserir(struct nodo **raiz, int chave)
+{
+    return NULL;
 }
 
-int excluir(struct nodo** raiz, int chave){
-	return -99;
+int excluir(struct nodo **raiz, int chave)
+{
+    return -99;
 }
 
-struct nodo* buscar(struct nodo* nodo, int chave){
-	return NULL;
+struct nodo *buscar(struct nodo *nodo, int chave)
+{
+    struct nodo *aux = nodo;
+
+    while (aux != nodo)
+    {
+        if (aux->chave = chave)
+            return aux;
+        else if (aux->chave > chave)
+            aux = aux->filho_e;
+        else
+            aux = aux->filho_d;
+    }
+
+    return NULL;
 }
 
-void imprimirEmOrdem(struct nodo* raiz){
-	printf("Imprimindo em ordem\n");
+void imprimirEmOrdem(struct nodo *raiz)
+{
+    printf("Imprimindo em ordem\n");
 }
 
-void imprimirEmLargura(struct nodo* raiz){
-	printf("Imprimindo em largura\n");
+void imprimirEmLargura(struct nodo *raiz)
+{
+    printf("Imprimindo em largura\n");
 }
