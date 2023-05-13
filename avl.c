@@ -67,7 +67,19 @@ int excluir(struct nodo **raiz, int chave)
 
 struct nodo *buscar(struct nodo *nodo, int chave)
 {
-    return NULL;
+    struct nodo *ptr = nodo;
+
+    while (ptr != NULL)
+    {
+        if (ptr->chave == chave)
+            return ptr;
+        else if (ptr->chave > chave)
+            ptr = ptr->filho_e;
+        else
+            ptr = ptr->filho_d;
+    }
+
+    return ptr;
 }
 
 void imprimirEmOrdem(struct nodo *raiz)
