@@ -10,6 +10,7 @@ struct aluno *getAluno1()
     struct aluno *retorno = malloc(sizeof(struct aluno));
     if (!retorno)
         exit(1);
+<<<<<<< HEAD
     retorno->nome = malloc(sizeof("Paulo Ricardo Lisboa de Almeida")); // sizeof conta o \0
     if (!retorno->nome)
         exit(1);
@@ -21,6 +22,19 @@ struct aluno *getAluno1()
     strcpy(retorno->nomeDinf, "paulo");
     retorno->grr = 1234;
 
+=======
+    retorno->nome = malloc(sizeof("Gustavo Isoo Binder")); // sizeof conta o \0
+    if (!retorno->nome)
+        exit(1);
+    retorno->nomeDinf = malloc(sizeof("gib22"));
+    if (!retorno->nomeDinf)
+        exit(1);
+
+    strcpy(retorno->nome, "Gustavo Isoo Binde");
+    strcpy(retorno->nomeDinf, "gib22");
+    retorno->grr = 20221242;
+
+>>>>>>> 84dd55fd7c4e0e3c40d638a46aac8ba7bfcd381c
     return retorno;
 }
 
@@ -57,6 +71,7 @@ void imprimirDadosAlunos()
 
 struct nodo *inserir(struct nodo **raiz, int chave)
 {
+    return NULL;
 }
 
 int excluir(struct nodo **raiz, int chave)
@@ -66,19 +81,19 @@ int excluir(struct nodo **raiz, int chave)
 
 struct nodo *buscar(struct nodo *nodo, int chave)
 {
-    struct nodo *aux = nodo;
+    struct nodo *ptr = nodo;
 
-    while (aux != NULL)
+    while (ptr != NULL)
     {
-        if (aux->chave = chave)
-            return aux;
-        else if (aux->chave > chave)
-            aux = aux->filho_e;
+        if (ptr->chave == chave)
+            return ptr;
+        else if (ptr->chave > chave)
+            ptr = ptr->filho_e;
         else
-            aux = aux->filho_d;
+            ptr = ptr->filho_d;
     }
 
-    return NULL;
+    return ptr;
 }
 
 void imprimirEmOrdem(struct nodo *raiz)
