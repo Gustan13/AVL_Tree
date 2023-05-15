@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "avl_handler.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

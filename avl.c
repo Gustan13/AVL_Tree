@@ -1,4 +1,5 @@
 #include "avl.h"
+#include "avl_handler.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -10,19 +11,6 @@ struct aluno *getAluno1()
     struct aluno *retorno = malloc(sizeof(struct aluno));
     if (!retorno)
         exit(1);
-<<<<<<< HEAD
-    retorno->nome = malloc(sizeof("Paulo Ricardo Lisboa de Almeida")); // sizeof conta o \0
-    if (!retorno->nome)
-        exit(1);
-    retorno->nomeDinf = malloc(sizeof("paulo"));
-    if (!retorno->nomeDinf)
-        exit(1);
-
-    strcpy(retorno->nome, "Paulo Ricardo Lisboa de Almeida");
-    strcpy(retorno->nomeDinf, "paulo");
-    retorno->grr = 1234;
-
-=======
     retorno->nome = malloc(sizeof("Gustavo Isoo Binder")); // sizeof conta o \0
     if (!retorno->nome)
         exit(1);
@@ -34,7 +22,6 @@ struct aluno *getAluno1()
     strcpy(retorno->nomeDinf, "gib22");
     retorno->grr = 20221242;
 
->>>>>>> 84dd55fd7c4e0e3c40d638a46aac8ba7bfcd381c
     return retorno;
 }
 
@@ -71,7 +58,10 @@ void imprimirDadosAlunos()
 
 struct nodo *inserir(struct nodo **raiz, int chave)
 {
-    return NULL;
+    if (*raiz == NULL)
+    {
+        return crea
+    }
 }
 
 int excluir(struct nodo **raiz, int chave)

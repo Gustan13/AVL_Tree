@@ -12,5 +12,8 @@ main.o: main.c
 ordenacao.o: avl.h avl.c
 	gcc -c avl.c $(parametrosCompilacao)
 
+avl.o: avl_handler.h avl_handler.c
+	gcc -c avl_handler.c $(parametrosCompilacao)
+
 clean:
 	rm -f *.o *.gch $(nomePrograma)

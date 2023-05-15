@@ -8,6 +8,8 @@ struct nodo
     struct nodo *pai;
     struct nodo *filho_e;
     struct nodo *filho_d;
+
+    int altura;
 };
 
 struct aluno
